@@ -1,0 +1,6 @@
+crop boxes are placed by the user
+	when you click on an empty crop box
+	you can select what crop you want
+
+
+# display crops when cropbox has been selected
