@@ -1,4 +1,4 @@
-extends Node
+extends Sprite
 
 # This script will handle the growth events of every crop
 
@@ -20,6 +20,7 @@ func set_plant(type):
 func _ready():
 	timer.start(timerIntervals)
 	timer.set_autostart(false)
+	self.frame = 0
 
 
 func _on_Timer_timeout():
@@ -29,7 +30,9 @@ func _on_Timer_timeout():
 func check_plant_health():
 	print(health, " checking health of plant wetness: ", wetness)
 	if wetness > 4:
-		stage += 1
+		if stage < 4:
+			stage += 1
+			self.frame = stage - 1
 	else:
 		health -= 50
 	

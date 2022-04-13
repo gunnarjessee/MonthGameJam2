@@ -42,5 +42,4 @@ func create_ui():
 	var instance = UI_SELECTOR.instance()
 	if (instance == null):
 		printerr('could not create UI')
-	
 	add_child(instance)
