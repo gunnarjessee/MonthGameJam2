@@ -33,4 +33,10 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 # Creates a UI above the the crop in context
 func create_ui():
 	var instance = UI_SELECTOR.instance()
+<<<<<<< HEAD
+	if (instance == null):
+		printerr('Oh fuck')
+	instance.position = self.get_global_position()
+=======
+>>>>>>> 0f2604ae820eab5acf1d24b363b1a9fcfe4cae87
 	add_child(instance)

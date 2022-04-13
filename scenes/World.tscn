@@ -5,9 +5,9 @@
 
 [node name="World" type="Node2D"]
 
-[node name="ground" type="Sprite" parent="."]
-position = Vector2( 191.846, 63.0607 )
-scale = Vector2( 12.391, 4.35875 )
+[node name="Sprite" type="Sprite" parent="."]
+position = Vector2( 205.47, 133.402 )
+scale = Vector2( 13.8419, 9.33761 )
 texture = ExtResource( 1 )
 
 [node name="cropbox" parent="." instance=ExtResource( 2 )]

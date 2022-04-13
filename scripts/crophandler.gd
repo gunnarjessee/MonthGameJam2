@@ -9,7 +9,9 @@ var stage: int = 0
 var typeofplant: String = "none"
 
 onready var timer = $Timer
-var timerIntervals: int = 5 # this is in seconds
+
+# updates crop, interval in seconds
+var timerIntervals: int = 2
 
 func set_plant(type):
 	typeofplant = type
@@ -29,7 +31,7 @@ func check_plant_health():
 	if wetness > 4:
 		stage += 1
 	else:
-		health -= 20
+		health -= 50
 	
 	if wetness > 0:
 		wetness -= 1
