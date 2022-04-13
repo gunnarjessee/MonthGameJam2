@@ -12,6 +12,14 @@ enum crops {
 
 var selected_crop = crops.none;
 
+func _ready():
+	var tempPos = self.position
+	tempPos = Vector2(round(tempPos.x / 16), round(tempPos.y / 16))
+	tempPos.x = tempPos.x * 16
+	tempPos.y = tempPos.y * 16
+	self.position = tempPos
+	
+
 func select_crop(crop):
 	selected_crop = crop
 	print('Crop has been selected')
@@ -31,7 +39,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 	print('area input event,', event)
 	if selected_crop == crops.none:
 		if event is InputEventMouseButton:
-			if event.is_pressed():
+			if event.is_pressed() and event.button_index == BUTTON_RIGHT:
 				create_ui()
 
 # Creates a UI above the the crop in context

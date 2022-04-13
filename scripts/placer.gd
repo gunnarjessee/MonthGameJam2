@@ -14,6 +14,10 @@ func placeCropBox(pos: Vector2):
 	get_tree().get_root().add_child(instance)
 
 func _process(delta):
-	if Input.get_action_strength("disable_place") > 0:
+	if Input.action_press("disable_place") and canPlace:
 		canPlace = false
-		print('disabling place')
+		
+func _input(event):
+	if event is InputEventMouseButton:
+		if event.pressed and event.button_index == BUTTON_LEFT:
+			placeCropBox(event.position)
