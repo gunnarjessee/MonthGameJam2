@@ -15,6 +15,7 @@ func _on_ColorRect_focus_exited():
 
 func destroy_self():
 	print('Getting rid of self, ui')
+	GameHandler.toggleInterfacing()
 	queue_free()
 
 

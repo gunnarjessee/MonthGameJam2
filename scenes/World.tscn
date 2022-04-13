@@ -1,7 +1,8 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://textures/ground.png" type="Texture" id=1]
 [ext_resource path="res://scenes/cropbox.tscn" type="PackedScene" id=2]
+[ext_resource path="res://textures/cropbox.png" type="Texture" id=3]
 
 [node name="World" type="Node2D"]
 
@@ -18,3 +19,29 @@ position = Vector2( 244.564, 54.3127 )
 
 [node name="cropbox3" parent="." instance=ExtResource( 2 )]
 position = Vector2( 269.313, 54.6662 )
+
+[node name="Control" type="Control" parent="."]
+margin_right = 380.0
+margin_bottom = 240.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="ColorRect" type="ColorRect" parent="Control"]
+anchor_left = 0.465
+anchor_top = 0.899
+anchor_right = 0.596
+anchor_bottom = 0.899
+margin_left = -22.7
+margin_top = -22.76
+margin_right = 12.52
+margin_bottom = 22.24
+color = Color( 0.0196078, 0.0196078, 0.0196078, 0.670588 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
+
+[node name="Sprite" type="Sprite" parent="Control/ColorRect"]
+position = Vector2( 46.3016, 19.9237 )
+scale = Vector2( 2.29785, 2.29785 )
+texture = ExtResource( 3 )

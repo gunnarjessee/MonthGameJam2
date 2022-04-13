@@ -12,10 +12,6 @@ enum crops {
 
 var selected_crop = crops.none;
 
-# Called when the node enters the scene tree for the first time.
-func _ready():
-	pass # Replace with function body.
-
 func select_crop(crop):
 	selected_crop = crop
 	print('Crop has been selected')
@@ -32,6 +28,7 @@ func select_crop(crop):
 			
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
+	print('area input event,', event)
 	if selected_crop == crops.none:
 		if event is InputEventMouseButton:
 			if event.is_pressed():
@@ -43,3 +40,4 @@ func create_ui():
 	if (instance == null):
 		printerr('could not create UI')
 	add_child(instance)
+	GameHandler.toggleInterfacing()
