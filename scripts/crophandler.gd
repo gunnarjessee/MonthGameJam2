@@ -28,7 +28,6 @@ func _on_Timer_timeout():
 	timer.start(timerIntervals)
 	
 func check_plant_health():
-	print(health, " checking health of plant wetness: ", wetness)
 	if wetness > 4:
 		if stage < 4:
 			stage += 1

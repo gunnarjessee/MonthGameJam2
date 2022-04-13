@@ -36,7 +36,6 @@ func select_crop(crop):
 			
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
-	print('area input event,', event)
 	if selected_crop == crops.none:
 		if event is InputEventMouseButton:
 			if event.is_pressed() and event.button_index == BUTTON_RIGHT:
@@ -44,8 +43,9 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 
 # Creates a UI above the the crop in context
 func create_ui():
-	var instance = UI_SELECTOR.instance()
-	if (instance == null):
-		printerr('could not create UI')
-	add_child(instance)
-	GameHandler.toggleInterfacing()
+	if not GameHandler.isInterfacing:
+		var instance = UI_SELECTOR.instance()
+		if (instance == null):
+			printerr('could not create UI')
+		add_child(instance)
+		GameHandler.toggleInterfacing()

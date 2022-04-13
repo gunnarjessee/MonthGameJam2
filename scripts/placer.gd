@@ -20,4 +20,5 @@ func _process(delta):
 func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
-			placeCropBox(event.position)
+			if not GameHandler.isInterfacing:
+				placeCropBox(event.position)

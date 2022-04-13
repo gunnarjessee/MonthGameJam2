@@ -5,6 +5,7 @@ var parent = null
 
 func _ready():
 	parent = get_parent()
+	parent.z_index = 1000
 
 func _on_ColorRect_mouse_exited():
 	destroy_self()
@@ -15,6 +16,7 @@ func _on_ColorRect_focus_exited():
 
 func destroy_self():
 	print('Getting rid of self, ui')
+	parent.z_index = 0
 	GameHandler.toggleInterfacing()
 	queue_free()
 
