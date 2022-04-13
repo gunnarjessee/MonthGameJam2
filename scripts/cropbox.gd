@@ -2,9 +2,11 @@ extends Sprite
 
 onready var UI_SELECTOR = load('res://scenes/crop_select.tscn')
 onready var WHEAT_PLANT = load('res://scenes/wheatcrop.tscn')
+onready var GRAPE_PLANT = load('res://scenes/grapecrop.tscn')
 
 enum crops {
 	wheat,
+	grapes,
 	none
 }
 
@@ -23,6 +25,11 @@ func select_crop(crop):
 			var instance = WHEAT_PLANT.instance()
 			add_child(instance)
 			
+		crops.grapes:
+			print('instantiating a grape plant')
+			var instance = GRAPE_PLANT.instance()
+			add_child(instance)
+			
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if selected_crop == crops.none:
@@ -33,10 +40,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 # Creates a UI above the the crop in context
 func create_ui():
 	var instance = UI_SELECTOR.instance()
-<<<<<<< HEAD
 	if (instance == null):
-		printerr('Oh fuck')
-	instance.position = self.get_global_position()
-=======
->>>>>>> 0f2604ae820eab5acf1d24b363b1a9fcfe4cae87
+		printerr('could not create UI')
+	
 	add_child(instance)

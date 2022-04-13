@@ -21,3 +21,8 @@ func destroy_self():
 func _on_wheat_button_button_down():
 	parent.select_crop(parent.crops.wheat)
 	destroy_self()
+
+
+func _on_grape_button_button_down():
+	parent.select_crop(parent.crops.grapes)
+	destroy_self()
