@@ -23,5 +23,13 @@ margin_left = 25.0409
 margin_top = 24.2535
 margin_right = 25.0409
 margin_bottom = 24.2535
-[connection signal="focus_exited" from="ColorRect" to="." method="_on_ColorRect_focus_exited"]
-[connection signal="mouse_exited" from="ColorRect" to="." method="_on_ColorRect_mouse_exited"]
+
+[node name="wheat_button" type="TextureButton" parent="wheat_icon"]
+margin_left = -7.0
+margin_top = -7.0
+margin_right = 7.0
+margin_bottom = 7.0
+__meta__ = {
+"_edit_use_anchors_": false
+}
+[connection signal="button_down" from="wheat_icon/wheat_button" to="." method="_on_wheat_button_button_down"]
