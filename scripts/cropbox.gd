@@ -20,5 +20,4 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 # Creates a UI above the the crop in context
 func create_ui():
 	var instance = UI_SELECTOR.instance()
-	instance.pos = get_global_mouse_position()
 	add_child(instance)

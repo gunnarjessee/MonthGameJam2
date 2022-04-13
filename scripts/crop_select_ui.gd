@@ -11,10 +11,13 @@ func _ready():
 	pass # Replace with function body.
 
 
+func _on_ColorRect_mouse_exited():
+	destroy_self()
 
-func _on_Control_focus_exited():
-	queue_free()
 
+func _on_ColorRect_focus_exited():
+	destroy_self()
 
-func _on_Control_mouse_exited():
+func destroy_self():
+	print('Getting rid of self, ui')
 	queue_free()
