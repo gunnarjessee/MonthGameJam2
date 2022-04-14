@@ -40,7 +40,10 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 		if event is InputEventMouseButton:
 			if event.is_pressed() and event.button_index == BUTTON_RIGHT:
 				create_ui()
-
+			if event.is_pressed() and event.button_index == BUTTON_MIDDLE:
+				GameHandler.sellItem(GameHandler.SHOP_SELL.cropbox)
+				queue_free()
+				
 # Creates a UI above the the crop in context
 func create_ui():
 	if not GameHandler.isInterfacing:

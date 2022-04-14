@@ -1,6 +1,7 @@
-[gd_scene load_steps=3 format=2]
+[gd_scene load_steps=4 format=2]
 
 [ext_resource path="res://textures/ground.png" type="Texture" id=1]
+[ext_resource path="res://scripts/moneylabel.gd" type="Script" id=2]
 [ext_resource path="res://textures/cropbox.png" type="Texture" id=3]
 
 [node name="World" type="Node2D"]
@@ -36,4 +37,14 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="Control/ColorRect"]
 position = Vector2( 44.6179, 22.7299 )
 scale = Vector2( 2.29785, 2.29785 )
+z_index = 4096
 texture = ExtResource( 3 )
+
+[node name="Label" type="Label" parent="."]
+margin_right = 40.0
+margin_bottom = 14.0
+text = "169$"
+script = ExtResource( 2 )
+__meta__ = {
+"_edit_use_anchors_": false
+}

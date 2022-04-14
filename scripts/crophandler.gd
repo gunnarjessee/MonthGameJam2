@@ -35,8 +35,8 @@ func check_plant_health():
 	else:
 		health -= 50
 	
-	if wetness > 0:
-		wetness -= 1
+	if wetness >= 0:
+		wetness -= 4
 	
 	if health <= 0:
 		get_parent().select_crop(get_parent().crops.none)

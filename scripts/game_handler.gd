@@ -2,6 +2,7 @@ extends Node
 
 var MONEY: int = 1000
 var isInterfacing = false
+onready var MONEY_TEXT = null
 
 enum SHOP_BUY {
 	cropbox = 100,
@@ -11,8 +12,18 @@ enum SHOP_BUY {
 
 enum SHOP_SELL {
 	grapes = 100,
-	wheat = 80
+	wheat = 80,
+	cropbox = 50
 }
+
+func sellItem(itemEnum):
+	MONEY += itemEnum
+	MONEY_TEXT.text = str(MONEY) + "$"
+	print(MONEY, ' bank account')
+
+func buyItem(itemEnum):
+	MONEY -= itemEnum
+	MONEY_TEXT.text = str(MONEY) + "$"
 
 func _ready():
 	pass

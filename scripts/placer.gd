@@ -21,4 +21,5 @@ func _input(event):
 	if event is InputEventMouseButton:
 		if event.pressed and event.button_index == BUTTON_LEFT:
 			if not GameHandler.isInterfacing:
+				GameHandler.buyItem(GameHandler.SHOP_BUY.cropbox)
 				placeCropBox(event.position)
