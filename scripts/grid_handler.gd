@@ -12,7 +12,11 @@ func _ready():
 			gridData[x].append([])
 			gridData[x][y] = 0
 
+# see if there is something already in the grid
 func checkOccupied(x, y):
+	if x > WORLD_SIZE - 1 or y > WORLD_SIZE - 1:
+		return false
+	
 	if gridData[x][y] == 0:
 		return false
 	return true
