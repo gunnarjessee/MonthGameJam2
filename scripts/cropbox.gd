@@ -13,12 +13,7 @@ enum crops {
 var selected_crop = crops.none;
 
 func _ready():
-	var tempPos = self.position
-	tempPos = Vector2(round(tempPos.x / 16), round(tempPos.y / 16))
-	tempPos.x = tempPos.x * 16
-	tempPos.y = tempPos.y * 16
-	self.position = tempPos
-	
+	pass	
 
 func select_crop(crop):
 	selected_crop = crop

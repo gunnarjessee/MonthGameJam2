@@ -41,9 +41,12 @@ z_index = 4096
 texture = ExtResource( 3 )
 
 [node name="Label" type="Label" parent="."]
-margin_right = 40.0
-margin_bottom = 14.0
+margin_left = 178.381
+margin_top = 195.03
+margin_right = 218.381
+margin_bottom = 209.03
 text = "169$"
+align = 1
 script = ExtResource( 2 )
 __meta__ = {
 "_edit_use_anchors_": false
