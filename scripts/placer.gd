@@ -29,7 +29,8 @@ func _input(event):
 		if event.pressed and event.button_index == BUTTON_LEFT:
 			if not GameHandler.isInterfacing:
 				tempPos = Vector2(round(event.position.x / 16), round(event.position.y / 16))
-				if GridHandler.checkOccupied(tempPos.x, tempPos.y) == false:
-					GameHandler.buyItem(GameHandler.SHOP_BUY.cropbox)
-					placeCropBox(event.position)
-					GridHandler.occupy(tempPos.x, tempPos.y)
+				if GameHandler.checkTransaction(GameHandler.SHOP_BUY.cropbox):
+					if GridHandler.checkOccupied(tempPos.x, tempPos.y) == false:
+						GameHandler.buyItem(GameHandler.SHOP_BUY.cropbox)
+						placeCropBox(event.position)
+						GridHandler.occupy(tempPos.x, tempPos.y)

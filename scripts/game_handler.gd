@@ -13,8 +13,13 @@ enum SHOP_BUY {
 enum SHOP_SELL {
 	grapes = 100,
 	wheat = 80,
-	cropbox = 50
+	cropbox = 80
 }
+
+func checkTransaction(itemEnum):
+	if itemEnum > MONEY:
+		return false
+	return true
 
 func sellItem(itemEnum):
 	MONEY += itemEnum

@@ -10,24 +10,34 @@ enum crops {
 	none
 }
 
+var gridPos: Vector2 = Vector2()
 var selected_crop = crops.none;
 
 func _ready():
-	pass	
+	gridPos = Vector2(round(position.x / 16), round(position.y / 16))
 
 func select_crop(crop):
 	selected_crop = crop
 	print('Crop has been selected')
 	match crop:
 		crops.wheat:
-			print('instantiating a wheat plant')
-			var instance = WHEAT_PLANT.instance()
-			add_child(instance)
-			
+			if GameHandler.checkTransaction(GameHandler.SHOP_BUY.wheat):
+				print('instantiating a wheat plant')
+				var instance = WHEAT_PLANT.instance()
+				GameHandler.buyItem(GameHandler.SHOP_BUY.wheat)
+				add_child(instance)
+			else:
+				print('Unable to purchase')
+				
 		crops.grapes:
-			print('instantiating a grape plant')
-			var instance = GRAPE_PLANT.instance()
-			add_child(instance)
+			if GameHandler.checkTransaction(GameHandler.SHOP_BUY.grapes):
+				print('instantiating a plant plant')
+				var instance = GRAPE_PLANT.instance()
+				GameHandler.buyItem(GameHandler.SHOP_BUY.grapes)
+				add_child(instance)
+			else:
+				print('Unable to purchase')
+				
 			
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
@@ -38,6 +48,7 @@ func _on_Area2D_input_event(viewport, event, shape_idx):
 			if event.is_pressed() and event.button_index == BUTTON_MIDDLE:
 				GameHandler.sellItem(GameHandler.SHOP_SELL.cropbox)
 				queue_free()
+				GridHandler.empty(gridPos.x, gridPos.y)
 				
 # Creates a UI above the the crop in context
 func create_ui():
