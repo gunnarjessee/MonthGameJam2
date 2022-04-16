@@ -4,6 +4,8 @@ onready var UI_SELECTOR = load('res://scenes/crop_select.tscn')
 onready var WHEAT_PLANT = load('res://scenes/wheatcrop.tscn')
 onready var GRAPE_PLANT = load('res://scenes/grapecrop.tscn')
 
+onready var dyingParticles = $DyingPart
+
 enum crops {
 	wheat,
 	grapes,
@@ -15,7 +17,8 @@ var selected_crop = crops.none;
 
 func _ready():
 	gridPos = Vector2(round(position.x / 16), round(position.y / 16))
-
+	dyingParticles.emitting = false
+	
 func select_crop(crop):
 	selected_crop = crop
 	print('Crop has been selected')
@@ -58,3 +61,10 @@ func create_ui():
 			printerr('could not create UI')
 		add_child(instance)
 		GameHandler.toggleInterfacing()
+		
+func startDyingParticles():
+	dyingParticles.emitting = true
+	
+func stopDyingParticles():
+	dyingParticles.emitting = false
+	

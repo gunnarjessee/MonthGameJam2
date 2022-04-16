@@ -21,7 +21,7 @@ func _ready():
 	timer.start(timerIntervals)
 	timer.set_autostart(false)
 	self.frame = 0
-
+	self.z_index = 500
 
 func _on_Timer_timeout():
 	check_plant_health()
@@ -32,8 +32,10 @@ func check_plant_health():
 		if stage < 4:
 			stage += 1
 			self.frame = stage - 1
+			get_parent().stopDyingParticles()
 	else:
-		health -= 50
+		health -= 20
+		get_parent().startDyingParticles()
 	
 	if wetness >= 0:
 		wetness -= 4

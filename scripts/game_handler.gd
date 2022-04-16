@@ -42,7 +42,7 @@ func toggleInterfacing():
 		_interface_exitted()
 			
 func _interface_exitted():
-	pass
+	pass  
 	
 func _interface_entered():
 	pass

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://textures/cropbox.png" type="Texture" id=1]
 [ext_resource path="res://scripts/cropbox.gd" type="Script" id=2]
+[ext_resource path="res://scenes/particles/dyingparticles.tscn" type="PackedScene" id=3]
 
 [sub_resource type="RectangleShape2D" id=1]
 extents = Vector2( 7.75903, 7.5255 )
@@ -15,5 +16,9 @@ script = ExtResource( 2 )
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="Area2D"]
 shape = SubResource( 1 )
+
+[node name="DyingPart" parent="." instance=ExtResource( 3 )]
+position = Vector2( 0.297638, -0.434265 )
+
 [connection signal="input_event" from="Area2D" to="." method="_on_Area2D_input_event"]
 [connection signal="mouse_entered" from="Area2D" to="." method="_on_Area2D_mouse_entered"]
