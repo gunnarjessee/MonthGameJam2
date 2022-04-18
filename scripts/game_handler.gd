@@ -2,6 +2,7 @@ extends Node
 
 var MONEY: int = 1000
 var isInterfacing = false
+var DEBUG = true
 onready var MONEY_TEXT = null
 
 enum SHOP_BUY {

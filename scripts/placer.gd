@@ -20,6 +20,8 @@ func placeCropBox(pos: Vector2):
 	get_tree().get_root().add_child(instance)
 
 func _process(delta):
+	if Input.action_press("add_money") and GameHandler.DEBUG:
+		GameHandler.MONEY = GameHandler.MONEY + 100
 	if Input.action_press("disable_place") and canPlace:
 		canPlace = false
 		
