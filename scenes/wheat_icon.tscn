@@ -1,6 +1,11 @@
-[gd_scene load_steps=2 format=2]
+[gd_scene load_steps=5 format=2]
 
 [ext_resource path="res://textures/wheat_crop.png" type="Texture" id=1]
+[ext_resource path="res://Savior2.ttf" type="DynamicFontData" id=2]
+[ext_resource path="res://scripts/fetch_price.gd" type="Script" id=3]
+
+[sub_resource type="DynamicFont" id=1]
+font_data = ExtResource( 2 )
 
 [node name="wheat_icon" type="Control"]
 anchor_right = 1.0
@@ -12,3 +17,15 @@ __meta__ = {
 [node name="Sprite" type="Sprite" parent="."]
 texture = ExtResource( 1 )
 hframes = 4
+
+[node name="Label" type="Label" parent="."]
+margin_left = -10.9375
+margin_top = -20.9375
+margin_right = 12.0625
+margin_bottom = -5.9375
+custom_fonts/font = SubResource( 1 )
+text = "$100"
+script = ExtResource( 3 )
+__meta__ = {
+"_edit_use_anchors_": false
+}
