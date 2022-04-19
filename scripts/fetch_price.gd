@@ -1,6 +1,8 @@
 extends Label
 
-export (String, 'Wheat', 'Grapes') var cropType
+export (String, 'Wheat', 'Grapes', 
+	'Potato', 'Carrot', 'Beet') var cropType
+
 
 func _ready():
 	match cropType:
