@@ -29,3 +29,23 @@ func _on_wheat_button_button_down():
 func _on_grape_button_button_down():
 	parent.select_crop(parent.crops.grapes)
 	destroy_self()
+
+
+
+
+func _on_Control_mouse_exited():
+	destroy_self()
+
+
+func _on_Button_button_down():
+	destroy_self()
+
+
+func _on_potato_button_button_down():
+	parent.select_crop(parent.crops.potato)
+	destroy_self()
+
+
+func _on_carrot_button_button_down():
+	parent.select_crop(parent.crops.carrot)
+	destroy_self()

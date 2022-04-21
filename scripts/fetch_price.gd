@@ -10,3 +10,7 @@ func _ready():
 			self.text = '$' + String(GameHandler.SHOP_BUY.grapes)
 		'Wheat':
 			self.text = '$' + String(GameHandler.SHOP_BUY.wheat)
+		'Carrot':
+			self.text = '$' + String(GameHandler.SHOP_BUY.carrot)
+		'Potato':
+			self.text = '$' + String(GameHandler.SHOP_BUY.potato)

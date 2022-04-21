@@ -8,7 +8,10 @@ onready var MONEY_TEXT = null
 enum SHOP_BUY {
 	cropbox = 100,
 	grapes = 20,
-	wheat = 10
+	wheat = 10,
+	carrot = 150,
+	potato = 200,
+	
 }
 
 enum SHOP_SELL {

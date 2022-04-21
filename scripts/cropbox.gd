@@ -3,12 +3,17 @@ extends Sprite
 onready var UI_SELECTOR = load('res://scenes/crop_select.tscn')
 onready var WHEAT_PLANT = load('res://scenes/wheatcrop.tscn')
 onready var GRAPE_PLANT = load('res://scenes/grapecrop.tscn')
+onready var CARROT_PLANT = load('res://scenes/carrotcrop.tscn')
+onready var POTATO_PLANT = load('res://scenes/potatocrop.tscn')
+
 
 onready var dyingParticles = $DyingPart
 
 enum crops {
 	wheat,
 	grapes,
+	carrot,
+	potato,
 	none
 }
 
@@ -37,6 +42,16 @@ func select_crop(crop):
 				print('instantiating a plant plant')
 				var instance = GRAPE_PLANT.instance()
 				GameHandler.buyItem(GameHandler.SHOP_BUY.grapes)
+				add_child(instance)
+		crops.carrot:
+			if GameHandler.checkTransaction(GameHandler.SHOP_BUY.carrot):
+				var instance = CARROT_PLANT.instance()
+				GameHandler.buyItem(GameHandler.SHOP_BUY.carrot)
+				add_child(instance)
+		crops.potato:
+			if GameHandler.checkTransaction(GameHandler.SHOP_BUY.potato):
+				var instance = POTATO_PLANT.instance()
+				GameHandler.buyItem(GameHandler.SHOP_BUY.potato)
 				add_child(instance)
 			else:
 				print('Unable to purchase')
